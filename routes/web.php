@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,4 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Rota responsavel por cadastrar o jogador
-//Route::resource('/players', PlayersController::class)->middleware('auth');
+Route::resource('/vehicles', VehicleController::class)->middleware('auth');
