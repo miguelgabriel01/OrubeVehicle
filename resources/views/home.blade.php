@@ -40,7 +40,6 @@
               <b>N° de propietarios:</b> {{$vehicles->owners}}<br>
               <b>Tipo: </b>{{$vehicles->type}}<br>
               <b>Valor: </b>R${{$vehicles->value}}<br>
-              <b>Cor: </b>{{$vehicles->color}}<br>
               <b>Quilometragem: </b>{{$vehicles->km}}KM<br>
             <p class="text-secondary">{{$vehicles->description}}</p>
             </p>

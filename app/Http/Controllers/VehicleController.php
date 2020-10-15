@@ -134,7 +134,7 @@ class VehicleController extends Controller
         $vehicle->update($request->all());
 
         if($request->hasFile('image') and $request->file('image')->isValid()){
-            $vehicle->image->delete();
+            //$vehicle->image->delete();
 
             $extension = $request->image->extension();
        
