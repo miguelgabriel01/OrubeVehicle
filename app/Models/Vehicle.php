@@ -12,7 +12,7 @@ class Vehicle extends Model
     use HasFactory;
 
     protected $fillable = [
-        'color','owners','type','value','km','description',
+        'model','color','owners','type','value','km','description',
     ];
 
          //função de acesso ao usuario
