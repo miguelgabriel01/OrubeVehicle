@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//classe de autenticação
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class VehicleController extends Controller
 {
@@ -169,6 +170,15 @@ class VehicleController extends Controller
      */
     public function destroy(Vehicle $vehicle)
     {
-        //
-    }
+        
+        if($vehicle->user_id===Auth::id()){
+            $vehicle->delete();
+            return redirect()->route('vehicles.index')->with('success', 'Veiculo deletado com sucesso');
+        }
+        else{
+            return redirect()->route('vehicles.index')
+                                     ->with('error', 'você não tem autorização para deletar este Veiculo')
+                                     ->withInput();
+        }
+    }   
 }
