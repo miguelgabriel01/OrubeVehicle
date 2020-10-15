@@ -18,7 +18,9 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        return view('vehicles.index');
+        $vehicles = Vehicle::where('user_id',Auth::id())->orderBy('created_at','desc')->paginate(3);//asc para do mais velho ao mais novo
+
+        return view('vehicles.index',compact('vehicles'));
     }
 
     /**
@@ -84,7 +86,7 @@ class VehicleController extends Controller
      */
     public function show(Vehicle $vehicle)
     {
-        //
+        return view('vehicles.show', compact('vehicle'));
     }
 
     /**
