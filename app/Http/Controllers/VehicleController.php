@@ -97,7 +97,15 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        //
+        if($vehicle->user_id===Auth::id()){
+
+            return view('vehicles.edith', compact('vehicle'));
+            }
+            else{
+                return redirect()->route('vehicles.index')
+                                         ->with('error', 'você não autorização para editar esta publicação.')
+                                         ->withInput();
+            }
     }
 
     /**
