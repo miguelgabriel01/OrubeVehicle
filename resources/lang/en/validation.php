@@ -143,6 +143,19 @@ return [
             'required' => 'Informe o seu estado',
         ],
 
+        'km' => [
+            'required' => 'Informe a quilometragem do seu veiculo',
+        ],
+
+        'description' => [
+            'required' => 'Informe uma descrição sobre seu veiculo',
+        ],
+
+        'Value' => [
+            'required' => 'Informe o valor do seu veiculo',
+        ],
+
+
         'email' => [
             'required' => 'Informe seu melhor Email.',
             'unique' => 'O Email já esta em uso.',
