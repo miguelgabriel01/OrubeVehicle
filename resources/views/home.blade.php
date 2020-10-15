@@ -47,7 +47,7 @@
 
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-
+                 <small>{{$vehicles->user->name}}</small>
                 </div>
                 <small class="text-muted">{{$vehicles->id}}</small>
               </div>
