@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vehicle;
-use App\Models\Image;
+use App\Models\Vehicle;//model de veiculos
+use App\Models\Image;//model das imagens 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//classe de autenticação
 use Illuminate\Support\Facades\Validator;
@@ -44,17 +44,17 @@ class VehicleController extends Controller
      $validatedData = $request ->validate([
         'model' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
         'color' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
-        'owners' => ['required','min:1','integer'],
-        'value' => ['required','min:1','integer'],//obrigatorio
-        'km' => ['required','min:1','integer'],
-        'description' => ['required'],
-        'type' => ['required'],
-        'image' => ['dimensions:min_width=200,min_height=200'],
+        'owners' => ['required','min:1','integer'],//o numero de propietarios deve ser obrigatorrio
+        'value' => ['required','min:1','integer'],//o valor do veiculo deve ser obrigatorio
+        'km' => ['required','min:1','integer'],//a quilometragem do veiculo deve ser informato
+        'description' => ['required'],//a descrição é obrigatoria
+        'type' => ['required'],//o tipo deve ser informado
+        'image' => ['dimensions:min_width=200,min_height=200'],//a img deve conter a altura de 200 e largura de 200
     ]);
 
-        $vehicle = new Vehicle($validatedData);///criamos
+        $vehicle = new Vehicle($validatedData);
 
-                $vehicle->user_id = Auth::id();//identificamos o autor
+                $vehicle->user_id = Auth::id();//identificamos o autor pelo ID na sessão
                 $vehicle->save();//salvamos
 
                 if($request->hasFile('image') and $request->file('image')->isValid()){
@@ -71,6 +71,7 @@ class VehicleController extends Controller
                     $image->save(); 
                 }
 
+                //redirecionamos para a view de index
                 return redirect('vehicles')->with('success', 'Veiculo cadastrado com sucesso');
     } 
     

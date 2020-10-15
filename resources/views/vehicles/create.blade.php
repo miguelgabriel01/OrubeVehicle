@@ -24,7 +24,7 @@
 
 
 
-                @if ($errors->any())
+                <!--@if ($errors->any())
                    <div class="alert alert-danger">
                           <strong>Ops!</strong>existem problemas com os dados recebidos <br><br>
                      <ul>
@@ -35,14 +35,14 @@
                         @endforeach
                    </ul>
                  </div>
-               @endif
+               @endif!-->
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('vehicles.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="modelo" class="col-md-4 col-form-label text-md-right">{{ __('Modelo') }}</label>
+                            <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Modelo') }}</label>
                             <div class="col-md-6">
                                 <input id="model" type="text" class="form-control @error('model') is-invalid @enderror" name="model" maxlength="100"  value="{{old('model')}}" required  autofocus maxlength="100">
                                 @error('model')
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cor" class="col-md-4 col-form-label text-md-right">{{ __('Cor') }}</label>
+                            <label for="color" class="col-md-4 col-form-label text-md-right">{{ __('Cor') }}</label>
                             <div class="col-md-6">
                                 <input id="color" type="text" class="form-control @error('color') is-invalid @enderror" name="color" maxlength="100"  value="{{old('color')}}" required  autofocus maxlength="100">
                                 @error('color')
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="numero de propietários" class="col-md-4 col-form-label text-md-right">{{ __('Numero de proprietários') }}</label>
+                            <label for="owners" class="col-md-4 col-form-label text-md-right">{{ __('Numero de proprietários') }}</label>
                             <div class="col-md-6">
                                 <input id="owners" type="number" class="form-control @error('owners') is-invalid @enderror" name="owners" maxlength="100"  value="{{old('owners')}}" required  autofocus maxlength="100">
                                 @error('owners')
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Valor do veiculo" class="col-md-4 col-form-label text-md-right">{{ __('Valor do veiculo') }}</label>
+                            <label for="Value" class="col-md-4 col-form-label text-md-right">{{ __('Valor do veiculo') }}</label>
                             <div class="col-md-6">
                                 <input id="value" type="number" class="form-control @error('value') is-invalid @enderror" name="value" maxlength="100"  value="{{old('value')}}" required  autofocus maxlength="100">
                                 @error('value')
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="quilometragem" class="col-md-4 col-form-label text-md-right">{{ __('Quilometragem') }}</label>
+                            <label for="km" class="col-md-4 col-form-label text-md-right">{{ __('Quilometragem') }}</label>
                             <div class="col-md-6">
                                 <input id="km" type="number" class="form-control @error('km') is-invalid @enderror" name="km" maxlength="100"  km="{{old('km')}}" required  autofocus maxlength="100">
                                 @error('km')
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+                            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
                             <div class="col-md-6">
                             <input type="file" name="image"  id="image" class="form-control"  required="" value="{{old('image')}}"/>
                             </div>
