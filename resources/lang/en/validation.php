@@ -40,11 +40,6 @@ return [
     'dimensions' => 'The :attribute has invalid image dimensions.',
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'The :attribute must be a valid email address.',
-
-    'state' => 'Informe o seu Estado',
-    'city' => 'Informe sua cidade',
-    'number' => 'Informe o seu Numero de telefone',
-
     'ends_with' => 'The :attribute must end with one of the following: :values.',
     'exists' => 'The selected :attribute is invalid.',
     'file' => 'The :attribute must be a file.',
@@ -98,7 +93,7 @@ return [
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
-    'password' => 'The password is incorrect.',
+    'password' => 'Senha incorreta.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
     'required' => 'The :attribute field is required.',
@@ -123,6 +118,7 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -135,11 +131,33 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'Informe o  seu nome.',
+            'unique' => 'O nome já esta em uso.',
+            'max' => 'O nome deve conter no maximo 100 caracteres.'
         ],
-    ],
+        'city' => [
+            'required' => 'Informe sua cidade',
+        ],
+        'state' => [
+            'required' => 'Informe o seu estado',
+        ],
 
+        'email' => [
+            'required' => 'Informe seu melhor Email.',
+            'unique' => 'O Email já esta em uso.',
+            'email' => 'o Email precisa ser valido.',
+        ],
+
+        'number' => [
+            'required' => 'Informe o seu numero.',
+            'unique' => 'O numero já esta em uso.',
+            'max' => 'O numero deve conter no maximo 11 digitos.',
+            'min' => 'O numero deve conter, no minino, 9 digitos',
+            'integer' => 'O numero não pode ser tipo texto.',
+        ],
+
+        ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

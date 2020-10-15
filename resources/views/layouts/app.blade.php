@@ -61,6 +61,9 @@
                                         {{ __('Sair') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route ('vehicles.index')}}">Listar seus Veiculos</a>
+                                    <a class="dropdown-item" href="{{ route ('vehicles.create')}}">Cadastar novo Veiculo</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

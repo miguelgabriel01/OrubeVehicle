@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//Rota responsavel por cadastrar o jogador
+//Rota responsavel por cadastrar o veiculo
 Route::resource('/vehicles', VehicleController::class)->middleware('auth');
