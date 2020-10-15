@@ -38,8 +38,9 @@
                @endif!-->
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('vehicles.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('vehicles.update' , $vehicle->id) }}" enctype="multipart/form-data">
                         @csrf
+                        @method( 'PUT')
 
                         <div class="form-group row">
                             <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Modelo') }}</label>
@@ -107,6 +108,7 @@
                         <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de veiculo') }}</label>
                         <div class="col-md-6">
                         <select id="inputState" class="form-control" value="{{$vehicle->type}}" name="type">
+                                <option value="{{$vehicle->type}}">{{$vehicle->type}}</option>
                                 <option value="Carro">Carro</option>
                                 <option value="Moto">Moto</option>
                             </select>
@@ -119,7 +121,7 @@
                             @isset($vehicle->image)
                                  <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ asset('storage/'.$vehicle->image->path)}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
                             @endisset
-                            <input type="file" name="image"  id="image" class="form-control"  required="" value="{{old('image')}}"/>
+                            <input type="file" name="image"  id="image" class="form-control"  value="{{old('image')}}"/>
                             </div>
                         </div>
 

@@ -15,12 +15,11 @@ class Image extends Model
         'path'
     ];
 
-    /*protected static function booted(){
-           //evento para deletar o player com a img
+    protected static function booted(){
            static::deleted(function(Image $image){
-            Log::channel('stderr')->info('Evento playerDeletado..  ' .$image->id);
+            Log::channel('stderr')->info('Evento vehicle Deletado..  ' .$image->id);
             Storage::disk('public')->delete($image->path);
         });
-    }*/
+    }
 
 }
