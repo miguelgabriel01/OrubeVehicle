@@ -17,7 +17,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'index']);
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::resource('/home', HomeController::class);
 
 //Rota responsavel por cadastrar o veiculo
 Route::resource('/vehicles', VehicleController::class)->middleware('auth');

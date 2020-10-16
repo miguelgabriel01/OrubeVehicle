@@ -30,7 +30,7 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
           @isset($vehicles->image)
-          <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ asset('storage/'.$vehicles->image->path)}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ asset('storage/'.$vehicles->image->path)}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
           @endisset
            <div class="card-body">
 
@@ -52,6 +52,7 @@
                 </div>
                 <a href="https://wa.me/55{{$vehicles->user->number}}?text=Olá%20{{$vehicles->user->name}}%20fiquei%20interessado%20no%20veiculo%20{{$vehicles->model}}%20%20"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button></a>
                    <button type="button" class="btn btn-danger"><i class="fas fa-envelope pr-1"></i> Email</button>
+
                 </div>
             </div>
           </div>
