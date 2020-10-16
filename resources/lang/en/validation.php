@@ -131,6 +131,8 @@ return [
     */
 
     'custom' => [
+
+        //meensagens de validação do usuario
         'name' => [
             'required' => 'Informe o  seu nome.',
             'unique' => 'O nome já esta em uso.',
@@ -143,19 +145,6 @@ return [
             'required' => 'Informe o seu estado',
         ],
 
-        'km' => [
-            'required' => 'Informe a quilometragem do seu veiculo',
-        ],
-
-        'description' => [
-            'required' => 'Informe uma descrição sobre seu veiculo',
-        ],
-
-        'Value' => [
-            'required' => 'Informe o valor do seu veiculo',
-        ],
-
-
         'email' => [
             'required' => 'Informe seu melhor Email.',
             'unique' => 'O Email já esta em uso.',
@@ -166,9 +155,48 @@ return [
             'required' => 'Informe o seu numero.',
             'unique' => 'O numero já esta em uso.',
             'max' => 'O numero deve conter no maximo 11 digitos.',
-            'min' => 'O numero deve conter, no minino, 9 digitos',
+            'min' => 'O numero deve conter, no minino, 9 digitos.',
             'integer' => 'O numero não pode ser tipo texto.',
         ],
+
+
+        //mensagens de validação para o veiculo
+
+        'km' => [
+            'required' => 'Informe a quilometragem do seu veiculo.',
+            'min' => 'A quilometragem deve ser de no minino 0km rodados.',
+            'integer' => 'O valor da quilometragem deve ser um numero valido.',
+        ],
+
+        'description' => [
+            'required' => 'Informe uma descrição sobre seu veiculo.',
+        ],
+
+        'value' => [
+            'required' => 'Informe o valor do seu veiculo',
+            'min' => 'O valor da veiculo deve ser de no minomo R$0,00',
+            'integer' => 'O valor do veiculo deve ser um numero valido.',
+        ],
+
+       'type' => [
+           'required' => 'O tipo do veiculo deve ser informado.',
+       ],
+
+       'owners' => [
+        'required' => 'Informe O numero de propietarios que esse veiculo já possuiu.',
+        'min' => 'A quantidade de propietarios deve ser de no minino 0.',
+        'integer' => 'A quantidade de propietarios deve ser um numero valido.',
+       ],
+
+       'color' => [
+           'required' => 'A cor do veiculo deve ser informada.',
+           'max' => 'A cor do veiculo deve conter no maximo, 100 caracteres.',
+       ],
+
+       'model' => [
+           'required' => 'O modelo do veiculo deve ser informado.',
+           'max' => 'O modelo do veiculo deve conter no maximo, 100 caracteres.',
+       ]
 
         ],
     /*
