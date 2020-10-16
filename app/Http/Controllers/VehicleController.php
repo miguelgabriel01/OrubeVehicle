@@ -47,9 +47,9 @@ class VehicleController extends Controller
      $validatedData = $request ->validate([
         'model' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
         'color' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
-        'owners' => ['required','min:1','integer'],//o numero de propietarios deve ser obrigatorrio
-        'value' => ['required','min:1','integer'],//o valor do veiculo deve ser obrigatorio
-        'km' => ['required','min:1','integer'],//a quilometragem do veiculo deve ser informato
+        'owners' => ['required','min:0','integer'],//o numero de propietarios deve ser obrigatorrio
+        'value' => ['required','min:0','integer'],//o valor do veiculo deve ser obrigatorio
+        'km' => ['required','min:0','integer'],//a quilometragem do veiculo deve ser informato
         'description' => ['required'],//a descrição é obrigatoria
         'type' => ['required'],//o tipo deve ser informado
         'image' => ['dimensions:min_width=200,min_height=200'],//a img deve conter a altura de 200 e largura de 200
@@ -122,9 +122,9 @@ class VehicleController extends Controller
      $validatedData = $request ->validate([
         'model' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
         'color' => ['required','max:100'],//obrigatorio,valor unico e tem que possuir no maximo, 255 caracteres
-        'owners' => ['required','min:1','integer'],//o numero de propietarios deve ser obrigatorrio
-        'value' => ['required','min:1','integer'],//o valor do veiculo deve ser obrigatorio
-        'km' => ['required','min:1','integer'],//a quilometragem do veiculo deve ser informato
+        'owners' => ['required','min:0','integer'],//o numero de propietarios deve ser obrigatorrio
+        'value' => ['required','min:0','integer'],//o valor do veiculo deve ser obrigatorio
+        'km' => ['required','min:0','integer'],//a quilometragem do veiculo deve ser informato
         'description' => ['required'],//a descrição é obrigatoria
         'type' => ['required'],//o tipo deve ser informado
         'image' => ['dimensions:min_width=200,min_height=200'],//a img deve conter a altura de 200 e largura de 200

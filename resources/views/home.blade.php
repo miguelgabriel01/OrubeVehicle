@@ -41,6 +41,7 @@
               <b>Tipo: </b>{{$vehicles->type}}<br>
               <b>Valor: </b>R${{$vehicles->value}}<br>
               <b>Quilometragem: </b>{{$vehicles->km}}KM<br>
+              <b>Contato: </b>{{$vehicles->user->number}}<br>
             <p class="text-secondary">{{$vehicles->description}}</p>
             </p>
               
@@ -49,8 +50,9 @@
                 <div class="btn-group">
                  <small>{{$vehicles->user->name}}</small>
                 </div>
-                <small class="text-muted">{{$vehicles->id}}</small>
-              </div>
+                <a href="https://wa.me/55{{$vehicles->user->number}}?text=Olá%20{{$vehicles->user->name}}%20fiquei%20interessado%20no%20veiculo%20{{$vehicles->model}}%20%20"><button type="button" class="btn btn-success"><i class="fab fa-whatsapp pr-1"></i> Whatsapp</button></a>
+                   <button type="button" class="btn btn-danger"><i class="fas fa-envelope pr-1"></i> Email</button>
+                </div>
             </div>
           </div>
         </div>
